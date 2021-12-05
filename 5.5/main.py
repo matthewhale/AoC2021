@@ -38,7 +38,8 @@ with open('input.csv', 'r') as csvfile:
                         else:
                             print("ERROR NOT EQUAL ", line)
                         print("5x1 x2 y1 y2 xinc", x1, " ", x2, " ", y1, " ", y2, " ", xinc)
-                        for y in range(y1, y2-1):
+                        for y in range(y1, y2-1, -1):
+                            print("test")
                             board[xinc][y] += 1
                             xinc -= 1
                             print("1x1 x2 y1 y2 xinc y ", x1, " ", x2, " ", y1, " ", y2, " ", xinc, " ", y)
@@ -58,7 +59,7 @@ with open('input.csv', 'r') as csvfile:
                             print("Equal ", line)
                         else:
                             print("ERROR NOT EQUAL ", line)
-                        for y in range(y1, y2-1):
+                        for y in range(y1, y2-1, -1):
                             board[xinc][y] += 1
                             xinc += 1
                             #print("3x1 x2 y1 y2 xinc y ", x1, " ", x2, " ", y1, " ", y2, " ", xinc, " ", y)
