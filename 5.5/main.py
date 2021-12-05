@@ -30,25 +30,27 @@ with open('input.csv', 'r') as csvfile:
                         board[x][y1] += 1
             else:
                 if x1 > x2:
-                    xinc = copy.deepcopy(x2)
+                    xinc = copy.deepcopy(x1)
                     if y1 > y2:
+                        print("GOTHERE")
                         if (y1 - y2) == (x1 - x2):
                             print("Equal ", line)
                         else:
                             print("ERROR NOT EQUAL ", line)
-                        for y in range (y2, y1+1):
+                        print("5x1 x2 y1 y2 xinc", x1, " ", x2, " ", y1, " ", y2, " ", xinc)
+                        for y in range(y1, y2-1):
                             board[xinc][y] += 1
-                            xinc += 1
+                            xinc -= 1
                             print("1x1 x2 y1 y2 xinc y ", x1, " ", x2, " ", y1, " ", y2, " ", xinc, " ", y)
                     else:
                         if (y2 - y1) == (x1 - x2):
                             print("Equal ", line)
                         else:
                             print("ERROR NOT EQUAL ", line)
-                        for y in range (y1, y2+1):
+                        for y in range(y1, y2+1):
                             board[xinc][y] += 1
-                            xinc += 1
-                            print("2x1 x2 y1 y2 xinc y ", x1, " ", x2, " ", y1, " ", y2, " ", xinc, " ", y)
+                            xinc -= 1
+                            #print("2x1 x2 y1 y2 xinc y ", x1, " ", x2, " ", y1, " ", y2, " ", xinc, " ", y)
                 elif x2 > x1:
                     xinc = copy.deepcopy(x1)
                     if y1 > y2:
@@ -56,21 +58,23 @@ with open('input.csv', 'r') as csvfile:
                             print("Equal ", line)
                         else:
                             print("ERROR NOT EQUAL ", line)
-                        for y in range (y2, y1+1):
+                        for y in range(y1, y2-1):
                             board[xinc][y] += 1
                             xinc += 1
-                            print("3x1 x2 y1 y2 xinc y ", x1, " ", x2, " ", y1, " ", y2, " ", xinc, " ", y)
+                            #print("3x1 x2 y1 y2 xinc y ", x1, " ", x2, " ", y1, " ", y2, " ", xinc, " ", y)
                     else:
                         if (y2 - y1) == (x2 - x1):
                             print("Equal ", line)
                         else:
                             print("ERROR NOT EQUAL ", line)
-                        for y in range (y1, y2+1):
+                        for y in range(y1, y2+1):
                             board[xinc][y] += 1
                             xinc += 1
-                            print("4x1 x2 y1 y2 xinc y ", x1, " ", x2, " ", y1, " ", y2, " ", xinc, " ", y)
+                            #print("4x1 x2 y1 y2 xinc y ", x1, " ", x2, " ", y1, " ", y2, " ", xinc, " ", y)
                 else:
                     print("ERROR ", line)
+
+
     cnt = 0
     for x in range (0, 1000):
         for y in range (0, 1000):
