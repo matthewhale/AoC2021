@@ -1,7 +1,4 @@
-import copy
 import csv
-import numpy
-
 counts = 0
 with open('input.csv', 'r') as csvfile:
     csvreader = csv.reader(csvfile)
